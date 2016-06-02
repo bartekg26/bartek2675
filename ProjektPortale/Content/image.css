@@ -1,0 +1,47 @@
+﻿#leftImg
+
+{
+
+float:left;
+
+padding: 0 5px 5px 0;
+
+margin-right: 20px;
+
+}
+
+#leftImg1
+
+{
+
+float:left;
+
+padding: 0 5px 5px 0;
+
+margin-right: 20px;
+
+}
+
+#rightImg
+
+{
+
+float:right;
+
+padding: 0 0 5px 5px;
+
+margin-left: 20px;
+
+}
+
+#rightImg1
+
+{
+
+float:right;
+
+padding: 0 0 5px 5px;
+
+margin-left: 20px;
+
+}

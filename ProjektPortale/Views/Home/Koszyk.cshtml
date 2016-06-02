@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Koszyk";
+}
+
+<h2>Koszyk</h2>
+
+@{
+
+    foreach (var pr in Model)
+    {
+
+
+
+        using (Html.BeginForm())
+        {
+            <form method="post">
+                <div style="height:300px; width:500px" align="center">
+                    <div>
+                        <h2 align="left">@pr.nazwaProduktu</h2>
+                        <img align="left" alt="Opis zdj�cia, a w nim wa�ne dla nas słowa kluczowe" src="@Url.Content(@pr.sciezkaObrazka)" id="leftImg1" />
+                    </div>
+                    <div>
+                        <input type="hidden" value="@pr.nazwaProduktu" name="nazwaProduktu" />
+                        <input type="hidden" value="@pr.opisProduktu" name="opisProduktu" />
+                        <input type="hidden" value="@pr.sciezkaObrazka" name="sciezkaObrazka" />
+                        <input type="hidden" value="@pr.cena" name="cena" />
+                        <p align="left">@pr.opisProduktu</p>
+                        <input align="left" type="submit" value="@pr.idProduct" name="opisProduktu" />
+
+                    </div>
+                </div>
+                @*@Html.Hidden("nameProduct")
+                    @Html.HiddenFor(m=>m[0].nazwaProduktu, new { Value = "oks"})*@
+
+
+
+
+                @*<input type="submit" onclick="HiddenValue();" id="btn_changevalue" value="Change Value" />
+                    <script type="text/javascript">
+                        function HiddenValue() {
+
+                            document.getElementById('nazwaProduktu').value = "459";
+                            document.getElementById('opisProduktu').value = "opisProduktu"
+                        }
+                    </script>*@
+            </form>
+
+
+
+
+
+        }
+
+
+    }
+}
+

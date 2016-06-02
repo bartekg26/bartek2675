@@ -1,0 +1,106 @@
+﻿@model List<ProjektPortale.Models.Produkt>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<html>
+<head>
+    
+</head>
+<body>
+    @foreach (var pr in Model)
+    {
+        <div>
+            @pr.nazwaProduktu
+
+            <a href="/Home/KoszykAdd/@pr.idProduct">Dodaj do koszyka</a>
+        </div>
+    }
+
+    @*
+        @{
+
+            foreach (var pr in Model)
+            {
+
+
+
+                using (Html.BeginForm())
+                {
+                    <form method="post">
+                        <div style="height:300px; width:500px" align="center">
+                            <div>
+                                <h2 align="left">@pr.nazwaProduktu</h2>
+                                <img align="left" alt="Opis zdj�cia, a w nim wa�ne dla nas słowa kluczowe" src="@Url.Content(@pr.sciezkaObrazka)" id="leftImg1" />
+                            </div>
+                            <div>
+                                <input type="hidden" value="@pr.nazwaProduktu" name="nazwaProduktu" />
+                                <input type="hidden" value="@pr.opisProduktu" name="opisProduktu" />
+                                <input type="hidden" value="@pr.sciezkaObrazka" name="sciezkaObrazka" />
+                                <input type="hidden" value="@pr.cena" name="cena" />
+                                <input type="hidden" value="@pr.idProduct" name="idProduct" />
+                                <p align="left">@pr.opisProduktu</p>
+                                <input align="left" type="submit" value="KUP" name="opisProduktu" />
+
+                            </div>
+                        </div>
+                        @Html.Hidden("nameProduct")
+                            @Html.HiddenFor(m=>m[0].nazwaProduktu, new { Value = "oks"})
+
+
+
+
+                        @*<input type="submit" onclick="HiddenValue();" id="btn_changevalue" value="Change Value" />
+                            <script type="text/javascript">
+                                function HiddenValue() {
+
+                                    document.getElementById('nazwaProduktu').value = "459";
+                                    document.getElementById('opisProduktu').value = "opisProduktu"
+                                }
+                            </script>
+                    </form>
+
+
+
+
+
+                }
+
+
+            }
+        }
+    *@
+
+
+</body>
+</html>
+
+
+
+@*<div class="jumbotron">
+        <h1>ASP.NET</h1>
+        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+        <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    </div>*@
+
+@*<div class="row">
+        <div class="col-md-4">
+            <h2>Getting started</h2>
+            <p>
+                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control over markup
+                for enjoyable, agile development.
+            </p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Get more libraries</h2>
+            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Web Hosting</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+    </div>*@

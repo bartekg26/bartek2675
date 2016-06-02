@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ProjektPortale.Models.Produkt>
+
+@{
+    ViewBag.Title = "MyProducts";
+}
+
+<h2>MyProducts</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nazwaProduktu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.opisProduktu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageUpload)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Produkty_UserId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nazwaProduktu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.opisProduktu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImageUpload)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Produkty_UserId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idProduct }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idProduct }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idProduct })
+        </td>
+    </tr>
+}
+
+</table>
